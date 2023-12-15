@@ -84,6 +84,7 @@ writeRelationshipType: 'PATH'
 })
 YIELD nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
 RETURN nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
+```
 
 L’analyse rend ensuite un résultat. Si l'estimation montre que l'exécution peut dépasser les limites de la mémoire, l'exécution est interdite.
 
@@ -92,6 +93,7 @@ L’analyse rend ensuite un résultat. Si l'estimation montre que l'exécution p
 Arrivé ici, Neo4j nous permet de choisir entre 2 modes d'exécutions.
 Premièrement le mode Stream, qui peut se résumer à une exécution classique de A\*.
 
+```Cypher
 MATCH (source:Station {name: 'Kings Cross'}), (target:Station {name: 'Kentish Town'})
 CALL gds.shortestPath.astar.stream('myGraph', {
 sourceNode: source,
