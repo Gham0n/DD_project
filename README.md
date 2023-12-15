@@ -35,7 +35,19 @@ Si le nœud n'est pas final, de nouveaux nœuds sont créés pour chaque nœud c
 
 **PageRank**
 
-PageRank prend en entrée un graphe quelconque, et rend une distribution représentant la probabilité que l’on puisse atteindre un nœud en parcourant des liens de manière aléatoire. Ce processus s’effectue au cours de plusieurs itérations, au fur et à mesure desquelles la distribution se rapproche de ce qu’on pourrait observer dans la réalité.
+L'algorithme PageRank évalue l'importance relative des nœuds dans un graphe en attribuant des scores basés sur la structure du réseau. Le principe sous-jacent repose sur l'idée que les nœuds qui sont connectés à d'autres nœuds importants doivent également être considérés comme importants. Le calcul du PageRank s'effectue de manière itérative, chaque nœud recevant un score qui dépend de la somme des scores de ses voisins.
+
+Mathématiquement, le score PageRank \(PR(u)\) d'un nœud \(u\) est déterminé par la formule :
+
+\[ PR(u) = (1 - d) + d \times \left( \frac{PR(v)}{L(v)} \right) \]
+
+où :
+
+- \(d\) représente le facteur d'amortissement (habituellement autour de 0,85),
+- \(v\) parcourt tous les nœuds voisins de \(u\),
+- \(L(v)\) indique le nombre de liens sortants de \(v\).
+
+Ce processus est répété jusqu'à ce que les scores convergent vers une valeur stable.
 
 ### Exemple
 
@@ -126,28 +138,6 @@ Resultat:
 ![Exemple_ARes*](linkToImage.png)
 
 ---
-
-PageRank (en markdown)
-
-### Contexte :
-
-Neo4j, une base de données orientée graphe spécialisée dans le stockage et la gestion de données interconnectées, offre une plateforme idéale pour explorer les relations complexes entre entités. L'algorithme PageRank, originellement conçu par Google pour évaluer la pertinence des pages web dans son moteur de recherche, trouve une application significative dans le cadre de Neo4j en permettant l'analyse de l'importance des nœuds au sein d'un graphe.
-
-### Définition :
-
-L'algorithme PageRank évalue l'importance relative des nœuds dans un graphe en attribuant des scores basés sur la structure du réseau. Le principe sous-jacent repose sur l'idée que les nœuds qui sont connectés à d'autres nœuds importants doivent également être considérés comme importants. Le calcul du PageRank s'effectue de manière itérative, chaque nœud recevant un score qui dépend de la somme des scores de ses voisins.
-
-Mathématiquement, le score PageRank \(PR(u)\) d'un nœud \(u\) est déterminé par la formule :
-
-\[ PR(u) = (1 - d) + d \times \left( \frac{PR(v)}{L(v)} \right) \]
-
-où :
-
-- \(d\) représente le facteur d'amortissement (habituellement autour de 0,85),
-- \(v\) parcourt tous les nœuds voisins de \(u\),
-- \(L(v)\) indique le nombre de liens sortants de \(v\).
-
-Ce processus est répété jusqu'à ce que les scores convergent vers une valeur stable.
 
 ### Exemple :
 
