@@ -54,7 +54,7 @@ Ce processus est répété jusqu'à ce que les scores convergent vers une valeur
 
 **A\***
 
-![Exemple_A*](linkToImage.png)
+![Exemple_A*](Images/Exemple A.png)
 
 Prenons le graphe ci-dessus comme exemple. En Cypher celui-ci se code de la manière suivante :
 
@@ -136,7 +136,7 @@ Une nouvelle relation produite est toujours dirigée, même si le graphe d'entr�
 
 Resultat:
 
-![Exemple_ARes*](Images/Exemple A.png)
+![Exemple_ARes*](Images/Exemple_A.png)
 
 ---
 
