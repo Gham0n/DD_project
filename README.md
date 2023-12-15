@@ -178,3 +178,9 @@ PR(D) = (1 - 0.85) + 0.85 * (PR(B)/1)
 ```
 
 Ces itérations se répéteraient jusqu'à ce que les scores convergent vers des valeurs stables. À la fin, les pages avec des scores PageRank plus élevés sont considérées comme plus importantes dans le réseau, indiquant leur relative influence dans la structure de liens interconnectés.
+
+## Sources 
+
+- [Neo4j inc. documentation, A* Shortest Path](https://:neo4j.com/docs/graph-data-science/current/algorithms/astar/)
+- [Neo4j inc. documentation, PageRank](https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank/) 
+- [Wikipedia : A* Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)    
