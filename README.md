@@ -85,7 +85,6 @@ CALL gds.shortestPath.astar.write.estimate('myGraph', {
 YIELD nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
 RETURN nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
 ```
-```
 
 L’analyse rend ensuite un résultat. Si l'estimation montre que l'exécution peut dépasser les limites de la mémoire, l'exécution est interdite.
 
