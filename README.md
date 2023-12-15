@@ -6,7 +6,7 @@
 
 - [Hamon Guillaume](https://github.com/Gham0n/tpjpa2023)
 - [Léo Nolière](https://github.com/LeoNoliere)
-- [François Autin](https://github.com/francoiautin)
+- [François Autin](https://github.com/francoisautin)
 - [Remi Rativel]()
 
 ### Intro
