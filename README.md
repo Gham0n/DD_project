@@ -7,7 +7,7 @@
 - [Hamon Guillaume](https://github.com/Gham0n/tpjpa2023)
 - [Léo Nolière](https://github.com/LeoNoliere)
 - [François Autin](https://github.com/francoisautin)
-- [Remi Rativel]()
+- [Remi Rativel](https://github.com/rrativel)
 
 ### Intro
 
@@ -142,7 +142,7 @@ Resultat:
 
 #### PageRank
 
-Bien sûr, considérons un exemple plus concret avec un schéma textuel. Imaginons un petit réseau de pages web interconnectées, où chaque page est représentée par un nœud et les liens entre les pages sont représentés par des arêtes. Dans ce cas, nous allons utiliser l'algorithme PageRank pour évaluer l'importance relative de chaque page dans ce réseau.
+Considérons un exemple plus concret avec un schéma textuel. Imaginons un petit réseau de pages web interconnectées, où chaque page est représentée par un nœud et les liens entre les pages sont représentés par des arêtes. Dans ce cas, nous allons utiliser l'algorithme PageRank pour évaluer l'importance relative de chaque page dans ce réseau.
 
 ##### Schéma :
 
