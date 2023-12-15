@@ -22,6 +22,7 @@ Neo4j est une technologie de gestion de base de données parue en Février 2010.
 L’algorithme A*( “A-étoile” ou “A-Star” en anglais) sert à calculer le plus court chemin entre deux nœuds initiaux et finaux d’un graphe, privilégiant la rapidité de calcul à l’exactitude du résultat. Il s’agit d’une extension de l’algorithme de Dijkstra proposée 9 ans après celui-ci, en 1968 par Peter Elliot Hart, Nils John Nilsson et Bertram Raphael. Elle a vu le jour lorsque Nilsson a voulu améliorer la planification d’un robot prototype qui se déplace dans une pièce avec des obstacles et a créé une version plus rapide de l’algorithme de Dijkstra. Ses deux collègues ont à leur tour apporté leurs modifications, afin d’aboutir à une version jugée optimale : A*.
 
 **Pagerank**
+
 PageRank est un algorithme utilisé au sein du système de classement de pages de Google. Inventé par Larry Page à Stanford en 1996, il est l’innovation principale ayant permis à Google de se différencier de la concurrence. Il permet de mesurer la popularité d’une page web en fonction du nombre de liens connus du système permettant de s’y rendre, ce qui a pour effet de pouvoir estimer la pertinence d’une page en fonction de sa popularité.
 
 PageRank est aujourd’hui agrémenté d’autres algorithmes afin de raffiner la précision des résultats Google, notamment à cause de sa faiblesse face aux comportements malveillants d’utilisateurs du système. Seul, il reste néanmoins très utile afin de déterminer la popularité de nœuds dans un graphe dont les sources sont de confiance.
@@ -72,7 +73,7 @@ CREATE (a:Station {name: 'Kings Cross',         	latitude: 51.5308, longitude: -
 
 Tout d’abord on lance une estimation du coût en mémoire pour faire tourner l'algorithme sur ce graphe :
 
-```
+```Cypher
 MATCH (source:Station {name: 'Kings Cross'}), (target:Station {name: 'Kentish Town'})
 CALL gds.shortestPath.astar.write.estimate('myGraph', {
 sourceNode: source,
@@ -117,7 +118,7 @@ On distingue alors le résultat du plus court chemin, proposé par l’algorithm
 
 Le second mode est “Mutate”, qui va mettre à jour le graphe en créant de nouvelles relations représentant un chemin entre le nœud source et le nœud cible.
 
-```
+```Cypher
 MATCH (source:Station {name: 'Kings Cross'}), (target:Station {name: 'Kentish Town'})
 CALL gds.shortestPath.astar.mutate('myGraph', {
 sourceNode: source,
@@ -135,7 +136,7 @@ Une nouvelle relation produite est toujours dirigée, même si le graphe d'entr�
 
 Resultat:
 
-![Exemple_ARes*](linkToImage.png)
+![Exemple_ARes*](Images/Exemple A.png)
 
 ---
 
@@ -158,7 +159,7 @@ Bien sûr, considérons un exemple plus concret avec un schéma textuel. Imagino
 - Calcul des nouveaux scores en appliquant la formule PageRank pour chaque page.
 - Utilisation d'un facteur d'amortissement \(d\) (par exemple, 0.85).
 
-```
+```Cypher
 PR(A) = (1 - 0.85) + 0.85 * (PR(B)/2 + PR(C)/1) = 0.075 + 0.85 * (PR(B)/2 + PR(C))
 PR(B) = (1 - 0.85) + 0.85 * (PR(A)/2 + PR(C)/2 + PR(D)/1) = 0.075 + 0.85 * (PR(A)/2 + PR(C)/2 + PR(D))
 PR(C) = (1 - 0.85) + 0.85 * (PR(A)/1 + PR(B)/2) = 0.15 + 0.85 * (PR(A) + PR(B)/2)
@@ -169,7 +170,7 @@ PR(D) = (1 - 0.85) + 0.85 * (PR(B)/1) = 0.075 + 0.85 * PR(B)
 
 - Répétition du processus avec les nouveaux scores calculés.
 
-```
+```Cypher
 PR(A) = (1 - 0.85) + 0.85 * (PR(B)/2 + PR(C)/1)
 PR(B) = (1 - 0.85) + 0.85 * (PR(A)/2 + PR(C)/2 + PR(D)/1)
 PR(C) = (1 - 0.85) + 0.85 * (PR(A)/1 + PR(B)/2)
