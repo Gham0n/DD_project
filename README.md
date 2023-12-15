@@ -155,7 +155,7 @@ Bien sûr, considérons un exemple plus concret avec un schéma textuel. Imagino
 
 **Schéma :**
 
-![Exemple_PageRank](linkToImage.png)
+![Exemple_PageRank](Images/pageRank_Example.png)
 
 **Itérations de l'Algorithme PageRank :**
 
