@@ -87,7 +87,7 @@ RETURN nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
 
 L’analyse rend ensuite un résultat. Si l'estimation montre que l'exécution peut dépasser les limites de la mémoire, l'exécution est interdite.
 
-![Exemple_A*2](linkToImage.png)
+![Exemple_A*2](Images/Resultat_estimation.png)
 
 Arrivé ici, Neo4j nous permet de choisir entre 2 modes d'exécutions.
 Premièrement le mode Stream, qui peut se résumer à une exécution classique de A\*.
@@ -112,7 +112,7 @@ nodes(path) as path
 ORDER BY index
 ```
 
-![Exemple_A*3](linkToImage.png)
+![Exemple_A*3](Images/Resultat_Astar.png)
 
 On distingue alors le résultat du plus court chemin, proposé par l’algorithme.
 
@@ -136,7 +136,7 @@ Une nouvelle relation produite est toujours dirigée, même si le graphe d'entr�
 
 Resultat:
 
-![Exemple_ARes*](linkToImage.png)
+![Exemple_ARes*](Images/Resultat_Mutation.png)
 
 ---
 
